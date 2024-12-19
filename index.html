@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pakar Diagnosa Gangguan Kecemasan</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        .hidden { display: none; }
+        .container { padding: 20px; }
+        button { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Halaman Login -->
+        <div id="loginPage">
+            <h1>Login</h1>
+            <input type="text" id="nameInput" placeholder="Masukkan Nama" required>
+            <input type="number" id="ageInput" placeholder="Masukkan Umur" required>
+            <label for="locationSelect">Pilih Lokasi:</label>
+            <select id="locationSelect" required>
+                <option value="" disabled selected>Pilih Lokasi</option>
+                <option value="Bandung">Bandung</option>
+                <option value="Banyuwangi">Banyuwangi</option>
+                <option value="Gresik">Gresik</option>
+                <option value="Jakarta">Jakarta</option>
+                <option value="Jember">Jember</option>
+                <option value="Yogyakarta">Yogyakarta</option>
+                <option value="Kediri">Kediri</option>
+                <option value="Malang">Malang</option>
+                <option value="Mojokerto">Mojokerto</option>
+                <option value="Pasuruan">Pasuruan</option>
+                <option value="Probolinggo">Probolinggo</option>
+                <option value="Sidoarjo">Sidoarjo</option>
+                <option value="Solo">Solo</option>
+                <option value="Surabaya">Surabaya</option>
+            </select>
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- Halaman Utama -->
+        <div id="mainPage" class="hidden">
+            <h1>Selamat Datang, <span id="userName"></span></h1>
+            <button onclick="showNews()">Lihat Berita</button>
+            <button onclick="showAbout()">Tentang Kami</button>
+            <button onclick="startDiagnosis()">Mulai Diagnosis</button>
+            <button onclick="goToLogin()">Kembali ke Halaman Login</button>
+        </div>
+
+        <!-- Halaman Tentang Kami -->
+        <div id="aboutPage" class="hidden">
+            <h1>Tentang Kami</h1>
+            <p>Sistem Pakar Diagnosa Gangguan Kecemasan adalah aplikasi yang dirancang untuk membantu Anda memahami dan mengelola gejala kecemasan.</p>
+            <p>Kami bertujuan untuk menyediakan informasi dan alat yang berguna untuk Anda.</p>
+            <button onclick="backToMain()">Kembali ke Halaman Utama</button>
+        </div>
+
+        <!-- Halaman Berita -->
+    <div id="newsPage" class="hidden">
+    <h1>Berita Terbaru</h1>
+    <p>Temukan informasi terkini seputar kesehatan mental.</p>
+    <div id="newsContent"> 
+        <div class="section">
+            <h2>Gangguan Kecemasan: Jenis dan Gejala</h2>
+            <p>Gejala bervariasi tergantung jenis gangguan, seperti gangguan panik dan fobia sosial. Penanganan termasuk terapi dan medikasi. 
+                Informasi lebih lanjut dapat ditemukan di <a href="https://www.alodokter.com/kenali-tiga-jenis-gangguan-kecemasan-dan-gejalanya" target="_blank">artikel ini</a>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Generalized anxiety disorder (GAD)</h2>
+            <p>Generalized anxiety disorder (GAD) adalah kondisi ketika seseorang terus merasa cemas. 
+                Informasi lebih lanjut dapat ditemukan di <a href="https://hellosehat.com/mental/gangguan-kecemasan/generalized-anxiety-disorder/#google_vignette" target="_blank">artikel ini</a>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Fobia</h2>
+            <p>Fobia adalah ketakutan yang terus-menerus, berlebihan terhadap suatu objek. 
+                Informasi lebih lanjut dapat ditemukan di <a href="https://hellosehat.com/mental/gangguan-kecemasan/fobia/" target="_blank">artikel ini</a>.
+            </p> 
+        </div>
+        <div class="section">
+                <h2>Gangguan Kecemasan Sosial</h2>
+                <p>Gangguan kecemasan sosial atau fobia sosial adalah ketakutan akan situasi sosial yang melibatkan interaksi dengan orang lain, berbicara di depan umum, atau bahkan saat menjadi pusat perhatian. Seseorang yang mengalaminya akan merasa takut dan cemas berlebihan saat berada dalam situasi sosial. 
+                    Informasi lebih lanjut dapat ditemukan di,<a href="https://www.halodoc.com/kesehatan/gangguan-kecemasan-sosial" target="_blank"> artikel ini</a>.</p>
+            </div>
+
+            <div class="section">
+                <h2>PTSD (Post-Traumatic Stress Disorder)</h2>
+                <p>PTSD (Post-Traumatic Stress Disorder) atau gangguan stres pascatrauma adalah kondisi kesehatan jiwa yang dipicu oleh peristiwa traumatis. Misalnya, pelecehan seksual, bencana alam, peperangan, atau kecelakaan. 
+                    Informasi lebih lanjut dapat ditemukan di <a href="https://www.halodoc.com/kesehatan/ptsd" target="_blank"> artikel ini</a>.</p>
+            </div>
+
+            <div class="section">
+                <h2>Gangguan Panik</h2>
+                <p>Gangguan panik adalah kondisi yang ditandai dengan serangan panik atau kecemasan berlebihan secara tiba-tiba. Gangguan ini dapat terjadi berulang kali tanpa alasan yang jelas. 
+                    Informasi lebih lanjut tersedia di <a href="https://www.alodokter.com/gangguan-panik" target="_blank"> artikel ini</a>.</p>
+            </div>
+
+            <div class="section">
+                <h2>OCD (Obsessive Compulsive Disorder)</h2>
+                <p>OCD (Obsessive Compulsive Disorder)  adalah gangguan mental yang ditandai dengan pola pikir dan ketakutan tidak terkendali atau tidak diinginkan (obsesif) untuk melakukan sesuatu secara berulang-ulang (kompulsif). Orang dengan OCD (Obsessive Compulsive Disorder) tidak dapat mengontrol tindakan dan pikirannya untuk berhenti melakukan hal tersebut berulang kali. 
+                    Informasi lebih lanjut dapat ditemuka di <a href="https://doktersehat.com/penyakit-a-z/obsessive-compulsive-disorder-ocd/ " target="_blank"> artikel ini </a>.</p>
+            </div>
+    </div>
+    <button onclick="backToMain()">Kembali ke Halaman Utama</button>
+</div>
+       
+
+        <!-- Pilihan Gangguan -->
+        <div id="disorderSelectionPage" class="hidden">
+            <h2>Pilih Jenis Gangguan Kecemasan</h2>
+            <select id="disorderType" onchange="showSymptoms()">
+                <option value="" disabled selected>....</option> <!-- Placeholder -->
+                <option value="GAD">Gangguan Kecemasan Umum (GAD)</option>
+                <option value="OCD">Gangguan Obsesif-Kompulsif (OCD)</option>
+                <option value="Kecemasan_Sosial">Gangguan Kecemasan Sosial</option>
+                <option value="Phobia">Fobia</option>
+                <option value="PTSD">Gangguan Stres Pasca Trauma (PTSD)</option>
+                <option value="Panic">Gangguan Panik</option>
+            </select>
+            <button onclick="showSymptoms()">Selanjutnya</button>
+        </div>
+
+        <!-- Halaman Gejala -->
+        <div id="symptomPage" class="hidden">
+            <h2>Pilih Gejala yang Dirasakan</h2>
+            <div id="symptomContainer"></div>
+            <button onclick="nextQuestion()">Lanjut</button>
+        </div>
+
+        <!-- Hasil Diagnosis -->
+        <div id="resultPage" class="hidden">
+            <h2>Hasil Diagnosis</h2>
+            <p id="result"></p>
+            <p id="recommendation"></p>
+            <p id="firstAid"></p>
+            <button onclick="restart()">Mulai Lagi</button>
+        </div>
+    </div>
+
+    <script src="sisparr.js"></script>
+    <script>
+        // Example function to determine nearest RSUD based on location
+        function getNearestRSUD(location) {
+            const rsudList = {
+                "Surabaya": "RSUD Dr. Soetomo",
+                "Malang": "RSUD Malang",
+                "Bandung": "RSUD Hasan Sadikin",
+                "Banyuwangi": "RSUD Blambangan",
+                "Jember": "RSUD Jember",
+                "Sidoarjo": "RSUD Sidoarjo",
+                "Kediri": "RSUD Gambiran",
+                "Probolinggo": "RSUD Probolinggo",
+                "Gresik": "RSUD Gresik",
+                "Pasuruan": "RSUD Pasuruan",
+                "Jakarta": "RSJ Dr. Soeharto Heerdjan",
+                "Yogyakarta": "RSJ Grhasia",
+                "Solo": "RS Dr.OEN Kandang Sapi Solo",
+
+            };
+            return rsudList[location] || "RS terdekat tidak ditemukan.";
+        }
+
+        // Call this function to display the result and RSUD recommendation
+        function displayResult(percentage) {
+            const location = document.getElementById('locationSelect').value;
+            const resultText = `Diagnosis menunjukkan ${percentage}% kecemasan.`;
+            const recommendedRSUD = getNearestRSUD(location);
+            document.getElementById('result').innerText = resultText;
+            document.getElementById('recommendation').innerText = `Rekomendasi RSUD terdekat: ${recommendedRSUD}`;
+            document.getElementById('resultPage').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

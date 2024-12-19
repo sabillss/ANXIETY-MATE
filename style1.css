@@ -1,0 +1,182 @@
+/* Reset margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Latar belakang gambar */
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: url('cover.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #f0f0f0; /* Fallback jika gambar gagal dimuat */
+    overflow-y: auto; /* Menampilkan scroll pada body secara vertikal */
+}
+
+/* Kontainer utama */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out; /* Animasi fadeIn untuk efek transisi */
+    margin-bottom: 30px; /* Tambahkan margin bawah pada kontainer */
+}
+
+/* Judul */
+h1, h2 {
+    color: #3c3c3c;
+    margin-bottom: 20px;
+    font-size: 2rem; /* Ukuran font lebih besar untuk judul utama */
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Efek bayangan pada teks */
+}
+
+/* Paragraf */
+p {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6; /* Jarak antar baris lebih lebar untuk kenyamanan membaca */
+}
+
+/* Gaya untuk input dan tombol */
+input[type="text"], input[type="number"], select, button {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animasi untuk perubahan border */
+}
+
+/* Gaya untuk input saat focus */
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    border-color: #6c63ff; /* Warna border saat focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5); /* Efek bayangan saat fokus */
+}
+
+/* Style untuk tombol */
+button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out; /* Efek hover dan animasi transform */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan pada tombol */
+}
+
+button:hover {
+    background-color: #5753d9;
+    transform: scale(1.05); /* Efek tombol sedikit membesar saat hover */
+}
+
+/* Gaya untuk halaman yang tersembunyi */
+.hidden {
+    display: none;
+}
+
+/* Style untuk area pertanyaan */
+#questionContainer {
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Media Query untuk tampilan mobile */
+@media (max-width: 767px) {
+    .container {
+        padding: 20px;
+        min-height: auto; /* Hapus min-height pada tampilan mobile */
+    }
+
+    h1, h2 {
+        font-size: 1.8rem; /* Ukuran font sedikit lebih kecil pada perangkat kecil */
+    }
+
+    p {
+        font-size: 1rem; /* Ukuran font untuk teks informasi lebih kecil di perangkat mobile */
+    }
+
+    button {
+        font-size: 16px; /* Menyesuaikan ukuran tombol pada perangkat kecil */
+        padding: 12px 20px;
+    }
+}
+
+/* Animasi untuk fade-in efek pada kontainer */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Gaya untuk section berita */
+.section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    text-align: left;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out; /* Animasi fadeIn untuk efek transisi */
+    margin-bottom: 30px; /* Tambahkan margin bawah antar section */
+}
+
+.section h2 {
+    color: #3c3c3c;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Efek bayangan pada teks */
+}
+
+.section p {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6; /* Jarak antar baris lebih lebar untuk kenyamanan membaca */
+}
+
+.section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.section a:hover {
+    text-decoration: underline;
+}
+
+/* Media Query untuk tampilan mobile */
+@media (max-width: 767px) {
+    .section {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .section h2 {
+        font-size: 1.5rem; /* Ukuran font sedikit lebih kecil pada perangkat kecil */
+    }
+
+    .section p {
+        font-size: 1rem; /* Ukuran font untuk teks informasi lebih kecil di perangkat mobile */
+    }
+}
